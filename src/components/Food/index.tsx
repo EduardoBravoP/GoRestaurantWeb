@@ -56,7 +56,7 @@ const Food: React.FC<IProps> = ({
         <div className="icon-container">
           <button
             type="button"
-            className="icon"
+            className="icon edit"
             onClick={() => setEditingFood()}
             data-testid={`edit-food-${food.id}`}
           >
@@ -65,7 +65,7 @@ const Food: React.FC<IProps> = ({
 
           <button
             type="button"
-            className="icon"
+            className="icon trash"
             onClick={() => handleDelete(food.id)}
             data-testid={`remove-food-${food.id}`}
           >

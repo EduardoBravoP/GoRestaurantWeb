@@ -1,12 +1,23 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 interface IFoodPlateProps {
   available: boolean;
 }
 
+const rotate = keyframes`
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(-20px);
+  }
+`;
+
 export const Container = styled.div<IFoodPlateProps>`
   background: #f0f0f5;
   border-radius: 8px;
+  transition-duration: 0.5s;
 
   header {
     background: #ffb84d;
@@ -80,6 +91,14 @@ export const Container = styled.div<IFoodPlateProps>`
         & + button {
           margin-left: 6px;
         }
+
+        &.icon.edit:hover {
+          background: rgba(1, 162, 185, 0.5);
+        }
+
+        &.icon.trash:hover {
+          background: rgba(222, 62, 68, 0.7);
+        }
       }
     }
 
@@ -145,5 +164,9 @@ export const Container = styled.div<IFoodPlateProps>`
         }
       }
     }
+  }
+
+  &:hover {
+    transform: translateY(-20px);
   }
 `;
